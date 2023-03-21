@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css" />
+    <title>Games Shop - A sua loja de games</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <img src="./imagens/logo-kabum.png" alt="">
+        </div>
+        <div class="container">
+            <nav class="pages">
+                <ul>
+                    <li class="keOrNd">
+                        <a href="#">DEPARTAMETOS</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">LANÇAMENTOS</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">PC GAMER</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">TV</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">OFERTA DO DIA</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">OPENBOX</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">SEJA PRIME</a>
+                    </li>
+                    <li class="keOrNd">
+                        <a href="#">BAIXE O APP</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script>
+        let slideIndex = 1;
+        let slides = document.querySelectorAll(".slides img");
+        exibirSlide(slideIndex);
+        let intervalo;
+        function iniciarSlider() {
+            intervalo = setInterval(function () {
+                slideIndex++;
+                exibirSlide(slideIndex);
+            }, 3000);
+        }
+        function pararSlider() {
+            clearInterval(intervalo);
+        }
+        function mudarSlide(n) {
+            pararSlider();
+            exibirSlide(slideIndex += n);
+            iniciarSlider();
+        }
+        function exibirSlide(n) {
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+        iniciarSlider();
+    </script>
+    <!-- Banner rotativo -->
+    <div class="slider">
+        <div class="slides">
+            <img id="img1" src="./imagens/banner1.png" alt="Imagem 1">
+            <img id="img2" src="./imagens/banner2.png" alt="Imagem 2">
+            <img id="img3" src="./imagens/banner3.png" alt="Imagem 3">
+        </div>
+        <div class="prev" onclick="mudarSlide(-1)">&#10094;</div>
+        <div class="next" onclick="mudarSlide(1)">&#10095;</div>
+    </div>
+    <div class="principal">
+        <div class="barra">
+            <div class="titulo">TECH LIST</div>
+            <div class="contador" id="contador">TERMINA EM: 14D 15 : 01 : 04</div>
+        </div>
+    </div>
+    <section>
+        <div class="container-section">
+            <img class="porra" src="./imagens/gamer.png" alt="Fachada da loja Games Shop">
+            <div>
+                <div>
+                    <h2>SOBRE A LOJA</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iure exercitationem voluptas
+                        assumenda illum illo quis facilis porro rerum. Excepturi, doloribus quibusdam? A, laudantium
+                        doloremque dicta fugiat ratione atque odit.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore velit maiores vel obcaecati
+                        laboriosam temporibus dolores accusantium. Maiores odio, eius esse beatae quis cumque. Officiis
+                        quos qui recusandae quasi aut.</p>
+                </div>
+                <ul class="brands-list">
+                    <li><img src="./imagens/nintendo-logo-1-1.png" alt="Nintendo"></li>
+                    <li><img src="./imagens/xbox.png" alt="Xbox"></li>
+                    <li><img src="./imagens/Playstation_logo.png" alt="Playstation"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-contato">
+        <h2>CONTATO</h2>
+        </div>
+
+    </section>
+</body>
+</html>
